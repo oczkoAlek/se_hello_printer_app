@@ -40,6 +40,10 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   $ PYTHONPATH=. py.test
 
   ```
+  lint
+  $ make lint
+  #albo
+  $ flake8 hello_world test
 
 - Kontynuując pracę z projektem, aktywowanie hermetycznego środowiska dla aplikacji py:
 
