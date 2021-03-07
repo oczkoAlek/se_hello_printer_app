@@ -63,6 +63,7 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
   ```
   # miejsce na twoje notatki
+  # dodanie pliku .travis.yml i zupenienie pliku Makefile
   ```
 
 # Pomocnicze
