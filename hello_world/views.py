@@ -4,7 +4,7 @@ from hello_world.formater import SUPPORTED, PLAIN
 from flask import request
 
 
-moje_imie = "Ola"
+moje_imie = "Ola1"
 msg = "Hello World!"
 
 
@@ -13,7 +13,7 @@ def index():
     if 'name' in request.args:
         moje_imie = request.args['name']
     else:
-        moje_imie = 'Ola'
+        moje_imie = 'Ola1'
     output = request.args.get('output')
     if not output:
         output = PLAIN
