@@ -18,11 +18,11 @@ class FlaskrTestCase(unittest.TestCase):
         # TODO: compare actual and expected as JSONs
         self.assertEqual(b'{ "imie":"Ola", "mgs":Hello World!"}', rv.data)
 
-    def test_msg_with_output_xml(self):
-        rv = self.app.get('/?output=xml')
+#    def test_msg_with_output_xml(self):
+#        rv = self.app.get('/?output=xml')
 
         # TOOO: compare expected and actual as XMLs
-        #self.assertEqual(
+#        self.assertEqual(
         #    b"""<greetings>
         #    \t<name>Ola</name>\n\t<msg>Hello World!</msg>\n</greetings>""",
         #    rv.data)
