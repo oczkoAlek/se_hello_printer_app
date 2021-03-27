@@ -72,6 +72,25 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
 - Instalacja dockera: [dockerce howto](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
+## Heroku
+
+  #aktywacja venv
+  $ echo 'gunicorn' >> requirements.txt
+  $ pip install -r requirements.txt
+  #testowanie dzialania
+  # w jednym oknie terminala
+  $ PYTHONPATH=$PYTHONPATH:$(pwd) gunicorn hello_world:app
+  # w drugim oknie terminala
+  $ curl 127.0.0.1:8000
+
+  # w jednym oknie terminala
+  $ heroku local
+  # w drugim oknie terminala
+  $ curl 127.0.0.1:5000
+
+
+
+
 ## Centos
 
 - Instalacja docker-a:
