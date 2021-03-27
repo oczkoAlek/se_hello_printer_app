@@ -74,42 +74,56 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
 ## Heroku
 
-  #aktywacja venv
+- Dodanie gunicorn
+
+  ```
+  #Aktywacja venv
   $ echo 'gunicorn' >> requirements.txt
   $ pip install -r requirements.txt
-  #testowanie dzialania
+  ```
+- Testowanie dzialania
+
+  ```
   # w jednym oknie terminala
   $ PYTHONPATH=$PYTHONPATH:$(pwd) gunicorn hello_world:app
   # w drugim oknie terminala
   $ curl 127.0.0.1:8000
+  ```
 
 
 
-  #utworzenie pliku Procfile i dodaj linie:
+- utworzenie pliku Procfile i dodaj linie
+
+  ```
   # web: gunicorn hello_world:app
+  ```
 
-
-  # Zainstaluj Heroku CLI, korzystając z instrukcji na stronie:
+- Zainstaluj Heroku CLI, korzystając z instrukcji na stronie:
 https://devcenter.heroku.com/articles/heroku-cli
 
 
-  #Odpalanie heroku-cli w terminalu
+- Odpalanie heroku-cli w terminalu
+
+  ```
   # w jednym oknie terminala
   $ heroku local
   # w drugim oknie terminala
   $ curl 127.0.0.1:5000
+  ```
 
- #dodanie konta do statuscacke.com i dodanie tam aplikacji na #Heroku
+- dodanie konta do statuscacke.com i dodanie tam aplikacji na Heroku
 
 
- ##status do TravisCI
+ ## Status do TravisCI
+
  [![Build Status](https://travis-ci.org/oczkoAlek/se_hello_printer_app.svg?branch=master)](https://travis-ci.org/oczkoAlek/se_hello_printer_app)
 
 
 
 
- ##sprawdzenie statusu na statuscake
- [![Build Status](https://app.statuscake.com/button/index.php?Track=5902166&Days=1&Design=7)]
+ ## Sprawdzenie statusu na statuscake
+ 
+ ![Build Status](https://app.statuscake.com/button/index.php?Track=5902166&Days=1&Design=7)
 
 ## Centos
 
