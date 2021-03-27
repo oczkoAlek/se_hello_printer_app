@@ -83,13 +83,33 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   # w drugim oknie terminala
   $ curl 127.0.0.1:8000
 
+
+
+  #utworzenie pliku Procfile i dodaj linie:
+  # web: gunicorn hello_world:app
+
+
+  # Zainstaluj Heroku CLI, korzystając z instrukcji na stronie:
+https://devcenter.heroku.com/articles/heroku-cli
+
+
+  #Odpalanie heroku-cli w terminalu
   # w jednym oknie terminala
   $ heroku local
   # w drugim oknie terminala
   $ curl 127.0.0.1:5000
 
+ #dodanie konta do statuscacke.com i dodanie tam aplikacji na Heroku
 
 
+ #status do TravisCI
+ [![Build Status](https://travis-ci.org/oczkoAlek/se_hello_printer_app.svg?branch=master)](https://travis-ci.org/oczkoAlek/se_hello_printer_app)
+
+
+
+
+ #sprawdzenie statusu na statuscake
+ # https://app.statuscake.com/button/index.php?Track=5902166&Days=1&Design=7
 
 ## Centos
 
