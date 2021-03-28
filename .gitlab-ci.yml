@@ -1,11 +1,11 @@
 stages:
 - test
 - docker_build
+
 test:
  image: "python:3"
  stage: test
  script:
- - apk add --update make
  - make deps
  - make test
 docker:
