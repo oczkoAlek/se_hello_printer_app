@@ -30,5 +30,8 @@ class FlaskrTestCase(unittest.TestCase):
         lx_msg = ET.SubElement(greetings, "msg")
         lx_msg.text = 'Hello World!'
         s = ET.tostring(greetings)
-
         self.assertEqual(s, rv.data)
+
+    def test_output_name(self):
+        rv = self.app.get('/?name=Ola1&output=json')
+        self.assertEqual(b'{"imie": "Ola1", "msg": "Hello World!"}', rv.data)
