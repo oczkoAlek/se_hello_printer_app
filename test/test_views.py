@@ -1,6 +1,8 @@
 import unittest
 from hello_world import app
 from hello_world.formater import SUPPORTED
+import xml.etree.cElementTree as ET
+import json
 
 
 class FlaskrTestCase(unittest.TestCase):
@@ -15,14 +17,18 @@ class FlaskrTestCase(unittest.TestCase):
 
     def test_msg_with_output(self):
         rv = self.app.get('/?output=json')
-        # TODO: compare actual and expected as JSONs
-        self.assertEqual(b'{ "imie":"Ola1", "mgs":Hello World!"}', rv.data)
+        expected = {'imie': 'Ola1', 'msg': 'Hello World!'}
+        actual = json.loads(rv.data)
+        self.assertEqual(expected['imie'], actual['imie'])
+        self.assertEqual(expected['msg'], actual['msg'])
 
-#    def test_msg_with_output_xml(self):
-#        rv = self.app.get('/?output=xml')
+    def test_msg_with_output_xml(self):
+        rv = self.app.get('/?output=xml')
+        greetings = ET.Element("greetings")
+        lx_name = ET.SubElement(greetings, "name")
+        lx_name.text = 'Ola1'
+        lx_msg = ET.SubElement(greetings, "msg")
+        lx_msg.text = 'Hello World!'
+        s = ET.tostring(greetings)
 
-        # TOOO: compare expected and actual as XMLs
-#        self.assertEqual(
-        #    b"""<greetings>
-        #    \t<name>Ola</name>\n\t<msg>Hello World!</msg>\n</greetings>""",
-        #    rv.data)
+        self.assertEqual(s, rv.data)
